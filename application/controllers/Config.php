@@ -75,7 +75,8 @@ class Config extends CI_Controller
         $data = [
             'navbar' => $_POST['navbar'],
             'brandlogo' => $_POST['brandlogo'],
-            'sidebar' => $_POST['sidebar']
+            'sidebar' => $_POST['sidebar'],
+            'brandcolor' => $_POST['brandcolor']
         ];
 
         $where = ['id_config' => 1];

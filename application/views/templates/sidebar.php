@@ -5,7 +5,7 @@
 	<!-- Brand Logo -->
 	<a href="#" class="brand-link <?= $config->brandlogo; ?>">
 		<img src="<?= base_url('assets/img/' . $config->logo); ?>" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
-		<span class="brand-text font-weight-light"><?= $config->brand; ?></span>
+		<span class="brand-text <?= $config->brandcolor; ?>"><?= $config->brand; ?></span>
 	</a>
 
 	<?php $id_user = $this->session->userdata('id_user'); ?>

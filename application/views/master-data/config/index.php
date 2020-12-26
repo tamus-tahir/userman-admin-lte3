@@ -11,7 +11,7 @@
         <div class="rounded mt-4 p-4 bg-white shadow-lg ">
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="navbar">Navbar Variants <span class="text-danger">*</span></label>
                         <select id="change-navbar" class="form-control select2bs4" name="navbar" required>
@@ -40,7 +40,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="brandlogo">Brand Logo Variants <span class="text-danger">*</span></label>
                         <select id="change-brandlogo" class="form-control select2bs4" name="brandlogo" required>
@@ -67,7 +67,24 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="brandcolor">Brand Text Color <span class="text-danger">*</span></label>
+                        <select id="change-brandcolor" class="form-control select2bs4" name="brandcolor" required>
+                            <option value="text-primary" <?= $ubah->brandcolor == 'text-primary' ? 'selected' : ''; ?>>Primary </option>
+                            <option value="text-secondary" <?= $ubah->brandcolor == 'text-secondary' ? 'selected' : ''; ?>>Secondary </option>
+                            <option value="text-success" <?= $ubah->brandcolor == 'text-success' ? 'selected' : ''; ?>>Success </option>
+                            <option value="text-danger" <?= $ubah->brandcolor == 'text-danger' ? 'selected' : ''; ?>>Danger </option>
+                            <option value="text-warning" <?= $ubah->brandcolor == 'text-warning' ? 'selected' : ''; ?>>Warning </option>
+                            <option value="text-info" <?= $ubah->brandcolor == 'text-info' ? 'selected' : ''; ?>>Info </option>
+                            <option value="text-light" <?= $ubah->brandcolor == 'text-light' ? 'selected' : ''; ?>>Light </option>
+                            <option value="text-dark" <?= $ubah->brandcolor == 'text-dark' ? 'selected' : ''; ?>>Dark </option>
+                            <option value="text-white" <?= $ubah->brandcolor == 'text-white' ? 'selected' : ''; ?>>White </option>
+                            <option value="text-black" <?= $ubah->brandcolor == 'text-black' ? 'selected' : ''; ?>>black </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="sidebar">Sidebar Variants <span class="text-danger">*</span></label>
                         <select id="change-sidebar" class="form-control select2bs4" name="sidebar" required>

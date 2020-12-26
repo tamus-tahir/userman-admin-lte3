@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2020 at 04:45 PM
+-- Generation Time: Dec 26, 2020 at 02:52 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -49,7 +49,8 @@ INSERT INTO `tabel_akses` (`id_akses`, `id_profil`, `id_navigasi`, `tambah`, `ub
 (42, 1, 5, 1, 1, 1),
 (43, 1, 27, 1, 1, 1),
 (44, 1, 28, 1, 1, 1),
-(46, 1, 29, 1, 1, 1);
+(46, 1, 29, 1, 1, 1),
+(47, 1, 30, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -67,6 +68,7 @@ CREATE TABLE `tabel_config` (
   `sidebar` varchar(128) NOT NULL,
   `navbar` varchar(128) NOT NULL,
   `brandlogo` varchar(128) NOT NULL,
+  `brandcolor` varchar(128) NOT NULL,
   `keywords` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `author` varchar(255) NOT NULL
@@ -76,8 +78,8 @@ CREATE TABLE `tabel_config` (
 -- Dumping data for table `tabel_config`
 --
 
-INSERT INTO `tabel_config` (`id_config`, `brand`, `copyright`, `logo`, `background`, `login_title`, `sidebar`, `navbar`, `brandlogo`, `keywords`, `description`, `author`) VALUES
-(1, 'Admin Template', 'Tamus D Tahir', '81bdd2aaf7f5b27619839b99e40ee2d5.png', '77e46d50f4119bd5aaf1a8336acb3ce7.jpg', 'Template Default', 'sidebar-light-purple', 'navbar-dark navbar-purple', 'navbar-purple', 'CI3, Bootsrap 4', 'Template Admin LTE 3  || Bootsrap 4 || CodeIgniter 3', 'Tamus Tahir || 08114180521');
+INSERT INTO `tabel_config` (`id_config`, `brand`, `copyright`, `logo`, `background`, `login_title`, `sidebar`, `navbar`, `brandlogo`, `brandcolor`, `keywords`, `description`, `author`) VALUES
+(1, 'Admin Template', 'Tamus D Tahir', '81bdd2aaf7f5b27619839b99e40ee2d5.png', '77e46d50f4119bd5aaf1a8336acb3ce7.jpg', 'Template Default', 'sidebar-light-purple', 'navbar-dark navbar-purple', 'navbar-purple', 'text-white', 'CI3, Bootsrap 4', 'Template Admin LTE 3  || Bootsrap 4 || CodeIgniter 3', 'Tamus Tahir || 08114180521');
 
 -- --------------------------------------------------------
 
@@ -557,7 +559,7 @@ ALTER TABLE `tabel_user`
 -- AUTO_INCREMENT for table `tabel_akses`
 --
 ALTER TABLE `tabel_akses`
-  MODIFY `id_akses` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_akses` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tabel_config`
