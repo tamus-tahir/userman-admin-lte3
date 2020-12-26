@@ -130,3 +130,14 @@ function cekCSRF()
     }
     $ci->session->unset_userdata('csrf_token');
 }
+
+function cekDataTerpakai($table, $where, $redirect)
+{
+    $ci = get_instance();
+    $data = $ci->Default_m->getWhere($table, $where)->num_rows();
+
+    if ($data > 0) {
+        $ci->session->set_flashdata('error', 'Data Sedang Digunakan');
+        redirect($redirect);
+    }
+}

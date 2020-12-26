@@ -40,6 +40,9 @@
 <script src="<?= base_url('assets/vendor/dist/js/demo.js') ?>"></script>
 <!-- SweetAlert2 -->
 <script src="<?= base_url('assets/vendor/sweet-alert-2/sweetalert2.all.min.js'); ?>"></script>
+<!-- chart js -->
+<script src="<?= base_url('assets/vendor/chartjs/chart.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/chartjs/utils.js'); ?>"></script>
 
 <!-- datatables -->
 <script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js'); ?>"></script>
@@ -71,11 +74,4 @@
 		theme: 'bootstrap4',
 		width: '100%'
 	});
-
-	function modalStatic() {
-		$('.modal-action').modal({
-			backdrop: 'static',
-			keyboard: false
-		}, 'show');
-	}
 </script>

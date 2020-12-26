@@ -21,6 +21,70 @@ $('.button-delete').on('click', function (e) {
 
 });
 
+// button-delete-show
+$('#show').on('click', '.button-delete-show', function (e) {
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal({
+		title: 'Apakah Anda Yakin',
+		text: "Data Akan Dihapus",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Hapus Data'
+	}).then((result) => {
+		if (result.value) {
+			document.location.href = href;
+		}
+	})
+
+});
+
+// button-confirm-show
+$('#show').on('click', '.button-confirm-show', function (e) {
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal({
+		title: 'Apakah Anda Yakin ?',
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes'
+	}).then((result) => {
+		if (result.value) {
+			document.location.href = href;
+		}
+	})
+
+});
+
+// button-confirm
+$('.button-confirm').on('click', function (e) {
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal({
+		title: 'Apakah Anda Yakin',
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes'
+	}).then((result) => {
+		if (result.value) {
+			document.location.href = href;
+		}
+	})
+
+});
+
 // flash-data sukses
 const flashData = $('.flash-data').data('flashdata');
 if (flashData) {
@@ -43,24 +107,70 @@ if (flashError) {
 // ======== end sweet alert ========
 
 // ======== data tabel ========
-$(document).ready(function () {
-	$('#myTable').DataTable();
-	$('#myTable2').DataTable();
-	$('#tableExport').DataTable({
-		dom: 'Bfrtip',
-		buttons: [
-			'copy', 'csv', 'excel', 'pdf', 'print'
-		]
-	});
-	$('#myTable3').DataTable({
-		pageLength: 5,
-		lengthMenu: [
-			[5, 10, 20, -1],
-			[5, 10, 20, 'Todos']
-		]
-	})
+$('#myTable').DataTable();
+$('#myTable2').DataTable();
+
+$('#tableExport').DataTable({
+	dom: 'Bfrtip',
+	buttons: [
+		'copy', 'csv', 'excel', 'pdf', 'print'
+	]
 });
+
+$('#tableShow5').DataTable({
+	pageLength: 5,
+	lengthMenu: [
+		[5, 10, 20, -1],
+		[5, 10, 20, 'Todos']
+	]
+})
 // ======== end data tabel ========
+
+// ======== popover on mouseover ========
+// ======== popover ========
+$(".pop").popover({
+		trigger: "manual",
+		html: true,
+		animation: false
+	})
+	.on("mouseenter", function () {
+		var _this = this;
+		$(this).popover("show");
+		$(".popover").on("mouseleave", function () {
+			$(_this).popover('hide');
+		});
+	}).on("mouseleave", function () {
+		var _this = this;
+		setTimeout(function () {
+			if (!$(".popover:hover").length) {
+				$(_this).popover("hide");
+			}
+		}, 300);
+	});
+
+// ======== popover show ========
+$("#show").on("mouseenter", '.pop-show', function () {
+	var _this = this;
+	$(this).popover("show");
+	$(".popover").on("mouseleave", function () {
+		$(_this).popover('hide');
+	});
+}).on("mouseleave", '.pop-show', function () {
+	var _this = this;
+	setTimeout(function () {
+		if (!$(".popover:hover").length) {
+			$(_this).popover("hide");
+		}
+	}, 300);
+}).on("click", '.pop-show', function () {
+	var _this = this;
+	setTimeout(function () {
+		if (!$(".popover:hover").length) {
+			$(_this).popover("hide");
+		}
+	}, 300);
+});
+// ======== end popover on mouseover ========
 
 // ======== preview img  ========
 function readURL(input) {
@@ -98,29 +208,6 @@ $("#real-file2").change(function () {
 	readURL2(this);
 });
 // ======== end preview img  ========
-
-
-// ======== popover on mouseover ========
-$(".pop").popover({
-		trigger: "manual",
-		html: true,
-		animation: false
-	})
-	.on("mouseenter", function () {
-		var _this = this;
-		$(this).popover("show");
-		$(".popover").on("mouseleave", function () {
-			$(_this).popover('hide');
-		});
-	}).on("mouseleave", function () {
-		var _this = this;
-		setTimeout(function () {
-			if (!$(".popover:hover").length) {
-				$(_this).popover("hide");
-			}
-		}, 300);
-	});
-// ======== end popover on mouseover ========
 
 // ======== input type file ========
 const realFileBtn = document.getElementById("real-file");
@@ -160,3 +247,24 @@ realFileBtn2.addEventListener("change", function () {
 	}
 });
 // ======== end input type file ========
+
+// ======== function ========
+function modalStatic() {
+	$('.modal-action').modal({
+		backdrop: 'static',
+		keyboard: false
+	}, 'show');
+}
+
+function formatNumber(num) {
+	return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+const formatCash = n => {
+	if (n < 1e3) return n;
+	if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(2) + "Ribu";
+	if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(2) + "Jt";
+	if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(2) + "M";
+	if (n >= 1e12) return +(n / 1e12).toFixed(2) + "T";
+};
+// ======== end function ========
