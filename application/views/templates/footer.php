@@ -23,8 +23,8 @@
 				</button>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-				<a class="btn btn-primary" href="<?= base_url('connect/logout'); ?>">Logout</a>
+				<button class="btn btn-danger" type="button" data-dismiss="modal">Batal <i class="fa fa-times ml-2"></i></button>
+				<a class="btn btn-primary" href="<?= base_url('connect/logout'); ?>">Logout <i class="fas fa-sign-out-alt ml-2"></i></a>
 			</div>
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 <script src="<?= base_url('assets/js/my-script.js'); ?>"></script>
 
 <script>
-	const base_url = 'http://localhost/user-management-admin-lte3/';
+	const base_url = '<?= base_url(''); ?>';
 	$("#my-form").parsley({
 		errorClass: 'is-invalid text-red',
 		successClass: 'is-valid',

@@ -37,7 +37,7 @@
 					Change Password
 				</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+				<a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#logoutModal">
 					<i class="fas fa-power-off mr-2"></i>
 					Logout
 				</a>

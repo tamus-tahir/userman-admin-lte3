@@ -84,7 +84,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal">Batal <i class="fa fa-times ml-2"></i></button>
                 <button type="submit" class="btn btn-primary btn-send"></button>
 
                 </form>

@@ -1,7 +1,7 @@
 <script>
     $('.addForm').on('click', function() {
         modalStatic();
-        $('.btn-send').html('Tambah <i class="fas fa-paper-plane"></i>');
+        $('.btn-send').html('Tambah <i class="fas fa-paper-plane ml-2"></i>');
         $('#token').val('');
         $('#keyword-icon').val('');
         $('#id_navigasi').val('');
@@ -19,7 +19,7 @@
         modalStatic();
         $('#keyword-icon').val('');
         getIcon();
-        $('.btn-send').html('Ubah <i class="fas fa-paper-plane"></i>');
+        $('.btn-send').html('Ubah <i class="fas fa-paper-plane ml-2"></i>');
         const id = $(this).data('id');
         const token = $(this).data('token');
         $.ajax({

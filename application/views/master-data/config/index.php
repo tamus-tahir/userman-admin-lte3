@@ -223,7 +223,7 @@
                 <input type="hidden" name="background_lama" value="<?= $ubah->background; ?>">
                 <input type="hidden" name="token" value="<?= generate(1); ?>">
 
-                <button class="mt-3 btn btn-primary" type="submit">Ubah <i class="fas fa-paper-plane"></i></button>
+                <button class="mt-3 btn btn-primary" type="submit">Ubah <i class="fas fa-paper-plane ml-2"></i></button>
 
             </form>
         </div>

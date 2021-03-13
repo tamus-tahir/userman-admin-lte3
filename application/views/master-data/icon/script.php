@@ -1,7 +1,7 @@
 <script>
     $('.addForm').on('click', function() {
         modalStatic();
-        $('.btn-send').html('Tambah <i class="fas fa-paper-plane"></i>');
+        $('.btn-send').html('Tambah <i class="fas fa-paper-plane ml-2"></i>');
         $('#id_icon').val('');
         $('#token').val('');
         $('#my-form')[0].reset();
@@ -16,7 +16,7 @@
     $('#myTable').on('click', '.updateForm', function() {
         modalStatic();
 
-        $('.btn-send').html('Ubah <i class="fas fa-paper-plane"></i>');
+        $('.btn-send').html('Ubah <i class="fas fa-paper-plane ml-2"></i>');
         const id = $(this).data('id');
         const token = $(this).data('token');
         $.ajax({

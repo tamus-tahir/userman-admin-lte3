@@ -87,10 +87,10 @@
 					</div>
 				</div>
 
-				<a class="mr-2 mt-3 btn btn-warning " href="<?= base_url('user'); ?>" role="button">
-					<i class="fa fa-arrow-left"></i> Batal
+				<a class="mr-2 mt-3 btn btn-danger " href="<?= base_url('user'); ?>" role="button">
+					Batal <i class="fa fa-times ml-2"></i>
 				</a>
-				<button class="mt-3 btn btn-primary" type="submit">Tambah <i class="fas fa-paper-plane"></i></button>
+				<button class="mt-3 btn btn-primary" type="submit">Tambah <i class="fas fa-paper-plane ml-2"></i></button>
 
 			</form>
 
