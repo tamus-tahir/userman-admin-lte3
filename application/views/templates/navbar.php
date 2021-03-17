@@ -12,9 +12,6 @@
 	<!-- Right navbar links -->
 	<ul class="navbar-nav ml-auto">
 
-		<?php $id_user = $this->session->userdata('id_user'); ?>
-		<?php $data = $this->Default_m->getWhere('tabel_user', ['id_user' => $id_user])->row(); ?>
-
 		<!-- Notifications Dropdown navigasi -->
 		<li class="nav-item dropdown">
 			<a class="nav-link" data-toggle="dropdown" href="#">
@@ -22,17 +19,17 @@
 			</a>
 			<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right h6">
 				<div class="dropdown-divider"></div>
-				<a href="<?= base_url('dashboard/profil/' . $data->id_user); ?>" class="dropdown-item">
+				<a href="<?= base_url('dashboard/profil/'); ?>" class="dropdown-item">
 					<i class="fas fa-id-card-alt mr-2"></i>
 					My Profile
 				</a>
 				<div class="dropdown-divider"></div>
-				<a href="<?= base_url('dashboard/changeprofil/' . $data->id_user); ?>" class="dropdown-item">
+				<a href="<?= base_url('dashboard/changeprofil/'); ?>" class="dropdown-item">
 					<i class="fas fa-user-edit mr-2"></i>
 					Change Profile
 				</a>
 				<div class="dropdown-divider"></div>
-				<a href="<?= base_url('dashboard/changepass/' . $data->id_user); ?>" class="dropdown-item">
+				<a href="<?= base_url('dashboard/changepass/'); ?>" class="dropdown-item">
 					<i class="fas fa-key mr-2"></i>
 					Change Password
 				</a>

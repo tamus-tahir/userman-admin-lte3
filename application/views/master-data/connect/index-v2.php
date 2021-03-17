@@ -73,7 +73,7 @@ background-attachment: fixed;
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn" type="submit">
+                        <button class="login100-form-btn js-tilt" type="submit" data-tilt>
                             Login
                         </button>
                     </div>
@@ -86,7 +86,27 @@ background-attachment: fixed;
     <script src="<?= base_url('assets/vendor/plugins/jquery/jquery.min.js') ?>"></script>
     <script src="<?= base_url('assets/vendor/dist/js/adminlte.min.js') ?>"></script>
     <script src="<?= base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"></script>
+    <!-- SweetAlert2 -->
+    <script src="<?= base_url('assets/vendor/sweet-alert-2/sweetalert2.all.min.js'); ?>"></script>
     <script>
+        const flashError = $('.flash-error').data('flashdata');
+        if (flashError) {
+            Swal({
+                title: 'Error',
+                text: flashError,
+                type: 'error'
+            });
+        }
+
+        const flashData = $('.flash-data').data('flashdata');
+        if (flashData) {
+            Swal({
+                title: 'Success',
+                text: flashData,
+                type: 'success'
+            });
+        }
+
         $('.js-tilt').tilt({
             scale: 1.1
         })

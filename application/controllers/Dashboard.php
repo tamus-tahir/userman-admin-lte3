@@ -32,10 +32,11 @@ class Dashboard extends CI_Controller
         $this->load->view('templates/foot');
     }
 
-    public function profil($id_user)
+    public function profil()
     {
         $data['title'] = 'Profil User';
 
+        $id_user = $this->session->userdata('id_user');
         $where = ['id_user' => $id_user];
         $on = 'tabel_profil.id_profil = tabel_user.id_profil';
         $data['user'] = $this->Default_m->getWhereTwoTable('tabel_user', 'tabel_profil', $on, $where)->row();
@@ -45,14 +46,14 @@ class Dashboard extends CI_Controller
         $this->load->view('templates/foot');
     }
 
-    public function changeprofil($id_user)
+    public function changeprofil()
     {
         $this->form_validation->set_rules('username', 'username', 'required|trim');
         $this->form_validation->set_rules('nama_user', 'nama lengkap', 'required|trim');
         $this->form_validation->set_error_delimiters('<div class="text-danger text-capitalize">', '</div>');
 
         if ($this->form_validation->run() === FALSE) {
-
+            $id_user = $this->session->userdata('id_user');
             $data['title'] = 'Ganti Profil';
             $where = ['id_user' => $id_user];
             $data['ubah'] = $this->Default_m->getWhere('tabel_user', $where)->row();
@@ -94,7 +95,7 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function changepass($id_user)
+    public function changepass()
     {
         $this->form_validation->set_rules('password', 'password', 'required|trim|min_length[8]|matches[passconfirm]');
         $this->form_validation->set_rules('passconfirm', 'konfirmasi password', 'required|trim|min_length[8]|matches[password]');
